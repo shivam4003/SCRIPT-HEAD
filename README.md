@@ -1,38 +1,27 @@
+# 📄 Scripthead - Web-Based OCR App
 
-# Scripthead
+Scripthead is a user-friendly web-based Optical Character Recognition (OCR) application built using **Tesseract.js**, **Bootstrap**, and **JavaScript**. It allows users to upload images and extract text instantly right in their browser—no backend required!
 
-Scripthead is a web-based application that uses machine learning to extract and recognize text from images. Whether you're scanning documents, capturing handwritten notes, or retrieving text from screenshots, Scripthead makes it easy and efficient.
+## 🚀 Features
 
-## 🔍 Features
+- 🖼️ Drag & Drop image upload
+- ⚡ Real-time OCR processing using Tesseract.js
+- 🧠 Lightweight and fast (runs completely in-browser)
+- 📱 Responsive and mobile-friendly design (Bootstrap 5)
+- 🧾 Copy and download extracted text easily
+- ✨ Smooth UI with Animate.css animations
 
-- 🧠 Machine Learning-based OCR (Optical Character Recognition)
-- 📷 Upload image and extract text in real-time
-- 🖥️ Simple and intuitive web interface
-- 🔄 Supports multiple image formats (JPEG, PNG, etc.)
-- 💡 Ideal for document digitization, note extraction, and more
+## 🔧 Technologies Used
 
-## 🚀 How It Works
+- [Tesseract.js](https://github.com/naptha/tesseract.js) – OCR Engine in JavaScript
+- [Bootstrap 5](https://getbootstrap.com/) – Responsive UI Framework
+- [Animate.css](https://animate.style/) – CSS Animations
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Core logic and interactivity
+- [HTML5 & CSS3](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5) – Structure and styling
 
-1. Upload an image using the interface.
-2. Our system uses advanced ML algorithms to detect and extract text.
-3. The recognized text is displayed to the user and can be copied or saved.
+## 🖥️ How to Use
 
-## 🛠️ Tech Stack
-
-- **Frontend**: HTML, CSS, JavaScript (React.js or plain JS)
-- **Backend**: Node.js / Python (Flask or Django)
-- **Machine Learning**: Tesseract OCR / EasyOCR / Custom ML Model
-- **Storage**: Local uploads / Cloud storage (optional)
-
-## 📦 Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/SCRIPT-HEAD.git
-cd scripthead
-
-# Install dependencies (example for Node.js + Express backend)
-npm install
-
-# Start the server
-npm start
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/SCRIPT-HEAD.git
+   cd scripthead-ocr-app
