@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripthead</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #recognized-text {
+            white-space: pre-wrap;
+        }
+        #modal-text {
+            white-space: pre-wrap;
+        }
+        .nav-item:hover {
+            background-color: #56b3fa;
+            border-radius: 10px;
+        }
+        .nav-link:hover {
+            color: #fff;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #add8e6, #87ceeb);
+            padding: 100px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #03055B;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .hero p {
+            font-size: 24px;
+            color: #1a1d23;
+        }
+        #upload {
+            padding: 50px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #upload h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #03055B;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        #upload p {
+            font-size: 24px;
+            color: #1a1d23;
+        }
+        #contact {
+            padding: 50px;
+        }
+        #contact h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #03055B;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        #contact p {
+            font-size: 18px;
+            color: #1a1d23;
+        }
+        #faq {
+            padding: 50px;
+        }
+        #faq h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #03055B;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        #faq p {
+            font-size: 18px;
+            color: #1a1d23;
+        }
+        h1 {
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #56b3fa;
+            border-color: #56b3fa;
+        }
+        .btn-primary:hover {
+            background-color: #2f80ed;
+            border-color: #2f80ed;
+        }
+        .btn-secondary {
+            background-color: #87ceeb;
+            border-color: #87ceeb;
+        }
+        .btn-secondary:hover {
+            background-color: #56b3fa;
+            border-color: #56b3fa;
+        }
+        .modal-content {
+            background-color: #f0f0f0;
+        }
+        .modal-header {
+            background-color: #56b3fa;
+            color: #fff;
+        }
+        .modal-footer {
+            background-color: #f0f0f0;
+        }
+        #progress-bar {
+            width: 0%;
+            height: 20px;
+            background-color: #56b3fa;
+            border-radius: 10px;
+        }
+        #drop_zone {
+            width: 300px;
+            height: 200px;
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            margin: auto;
+        }
+        #drop_zone.highlight {
+            border-color: #56b3fa;
+            background-color: #f2f2f2;
+        }
+        .testimonial {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .testimonial img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#home">Scripthead</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#upload">Upload</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#faq">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container" id="home">
+        <div class="hero">
+            <h1 class="animate__animated animate__fadeInDown animate__delay-0.5s">WELCOME TO SCRIPTHEAD</h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">Our system uses Tesseract.js to recognize text from images.</p>
+            <p class="animate__animated animate__fadeInUp animate__delay-1.5s">Click on the Upload tab to upload an image and recognize text.</p>
+            <button class="btn btn-primary animate__animated animate__fadeInLeft animate__delay-2s" id="get-started-btn">Get Started</button>
+            <button class="btn btn-secondary animate__animated animate__fadeInRight animate__delay-2.5s" id="learn-more-btn">Learn More</button>
+        </div>
+        <h1 class="animate__animated animate__fadeInDown animate__delay-3s">ABOUT US</h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-3.5s">Scripthead is a web-based application that uses machine learning algorithms to recognize text from images. Our goal is to provide an easy-to-use platform for users to extract text from images and use it for various purposes.</p>
+        <h1 class="animate__animated animate__fadeInDown animate__delay-4s">HOW IT WORKS</h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-4.5s">Our system uses machine learning algorithms to recognize text from images. Simply upload an image, and our system will recognize the text and display it to you.</p>
+        <h1 class="animate__animated animate__fadeInDown animate__delay-5s">TESTIMONIALS</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="testimonial animate__animated animate__fadeInUp animate__delay-5.5s">
+                    <img src="https://via.placeholder.com/50" alt="Testimonial Image">
+                    <p>Scripthead is an amazing tool! It has saved me so much time and effort in extracting text from images.</p>
+                    <p>- John Doe</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial animate__animated animate__fadeInUp animate__delay-6s">
+                    <img src="https://via.placeholder.com/50" alt="Testimonial Image">
+                    <p>I was blown away by the accuracy of Scripthead. It's a game-changer for anyone who needs to extract text from images.</p>
+                    <p>- Jane Smith</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial animate__animated animate__fadeInUp animate__delay-6.5s">
+                    <img src="https://via.placeholder.com/50" alt="Testimonial Image">
+                    <p>Scripthead is easy to use and provides accurate results. I highly recommend it to anyone who needs to extract text from images.</p>
+                    <p>- Bob Johnson</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="upload" style="display: none; text-align: center;">
+        <h1 class="animate__animated animate__fadeInDown animate__delay-0.5s">UPLOAD IMAGE</h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">Drag and drop an image file here or click to upload</p>
+        <input type="file" id="image-upload" accept="image/*" style="display: none;">
+        <div id="drop_zone" class="animate__animated animate__fadeInUp animate__delay-1.5s">Drag and drop an image file here or click to upload</div>
+        <button id="recognize-btn" class="btn btn-primary animate__animated animate__fadeInLeft animate__delay-2s" style="height: 50px; font-size: 24px; margin-top: 20px;">Recognize Text</button>
+        <div id="progress-bar-container" style="width: 100%; background-color: #f0f0f0; border-radius: 10px; height: 20px; margin-top: 10px;">
+            <div id="progress-bar" style="width: 0%; height: 20px; background-color: #56b3fa; border-radius: 10px;"></div>
+        </div>
+        <div id="recognized-text" class="animate__animated animate__fadeInUp animate__delay-2.5s" style="font-size: 24px; margin-top: 20px;"></div>
+        <button type="button" class="btn btn-primary animate__animated animate__fadeInRight animate__delay-3s" data-bs-toggle="modal" data-bs-target="#exampleModal" id="show-modal-btn" style="height: 50px; font-size: 24px; display: none; margin-top: 20px;">
+            Show Full Text
+        </button>
+    </div>
+    <div class="container" id="contact" style="display: none;">
+        <h1 class="animate__animated animate__fadeInDown animate__delay-0.5s">CONTACT US</h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">If you have any questions or need help, please don't hesitate to contact us.</p>
+        <form class="animate__animated animate__fadeInUp animate__delay-1.5s">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message:</label>
+                <textarea class="form-control" id="message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary animate__animated animate__fadeInLeft animate__delay-2s">Submit</button>
+        </form>
+    </div>
+    <div class="container" id="faq" style="display: none;">
+        <h1 class="animate__animated animate__fadeInDown animate__delay-0.5s">FREQUENTLY ASKED QUESTIONS</h1>
+        <ul class="animate__animated animate__fadeInUp animate__delay-1s">
+            <li>Q: What is Scripthead?</li>
+            <li>A: Scripthead is a web-based application that uses machine learning algorithms to recognize text from images.</li>
+            <li>Q: How do I use Scripthead?</li>
+            <li>A: Click on the Upload tab to upload an image and recognize text.</li>
+            <li>Q: What types of images can I upload?</li>
+            <li>A: You can upload any type of image file, including JPEG, PNG, and GIF.</li>
+            <li>Q: How accurate is the text recognition?</li>
+            <li>A: The accuracy of the text recognition depends on the quality of the image and the complexity of the text. Generally, the system can recognize text with high accuracy, but it may not be 100% accurate in all cases.</li>
+            <li>Q: Can I use Scripthead for free?</li>
+            <li>A: Yes, Scripthead is completely free to use. You can upload and recognize text from images without paying any fees.</li>
+            <li>Q: Is my data secure?</li>
+            <li>A: Yes, Scripthead takes data security seriously. We use encryption to protect your data and do not store any of your images or recognized text on our servers.</li>
+        </ul>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Recognized Text</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-text" class="animate__animated animate__fadeInUp animate__delay-0.5s"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.5/dist/tesseract.min.js"></script>
+    <script>
+        const recognizeBtn = document.getElementById('recognize-btn');
+        const imageUpload = document.getElementById('image-upload');
+        const recognizedText = document.getElementById('recognized-text');
+        const showModalBtn = document.getElementById('show-modal-btn');
+        const modalText = document.getElementById('modal-text');
+        const homePage = document.getElementById('home');
+        const uploadPage = document.getElementById('upload');
+        const contactPage = document.getElementById('contact');
+        const faqPage = document.getElementById('faq');
+        const getStartedBtn = document.getElementById('get-started-btn');
+        const learnMoreBtn = document.getElementById('learn-more-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const dropZone = document.getElementById('drop_zone');
+
+        const pages = [homePage, uploadPage, contactPage, faqPage];
+
+        function showPage(page) {
+            pages.forEach(p => p.style.display = 'none');
+            page.style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage(homePage);
+            document.querySelectorAll('a.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    const pageId = link.getAttribute('href').substring(1);
+                    const page = document.getElementById(pageId);
+                    showPage(page);
+                });
+            });
+            getStartedBtn.addEventListener('click', function() {
+                showPage(uploadPage);
+            });
+            learnMoreBtn.addEventListener('click', function() {
+                const faqLink = document.querySelector('a.nav-link[href="#faq"]');
+                faqLink.click();
+            });
+        });
+
+        dropZone.addEventListener('click', function() {
+            imageUpload.click();
+        });
+
+        dropZone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            dropZone.classList.add('highlight');
+        });
+
+        dropZone.addEventListener('dragleave', function() {
+            dropZone.classList.remove('highlight');
+        });
+
+        dropZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            dropZone.classList.remove('highlight');
+            const files = e.dataTransfer.files;
+            imageUpload.files = files;
+        });
+
+        imageUpload.addEventListener('change', function() {
+            if (imageUpload.files.length > 0) {
+                dropZone.innerText = imageUpload.files[0].name;
+            } else {
+                dropZone.innerText = 'Drag and drop an image file here or click to upload';
+            }
+        });
+
+        recognizeBtn.addEventListener('click', async () => {
+            if (imageUpload.files.length === 0) {
+                recognizedText.innerText = 'Please upload an image file.';
+                return;
+            }
+
+            const image = imageUpload.files[0];
+            if (!image.type.startsWith('image/')) {
+                recognizedText.innerText = 'Please upload an image file.';
+                return;
+            }
+
+            recognizedText.innerText = 'Recognizing text...';
+            let progress = 0;
+            progressBar.style.width = '0%';
+            try {
+                const { data: { text } } = await Tesseract.recognize(image, 'eng', {
+                    logger: m => {
+                        progress = m.progress * 100;
+                        progressBar.style.width = `${progress}%`;
+                    }
+                });
+                recognizedText.innerText = text.substring(0, 100) + '...';
+                showModalBtn.style.display = 'inline-block';
+                modalText.innerText = text;
+            } catch (err) {
+                recognizedText.innerText = 'Error recognizing text.';
+                console.error(err);
+            }
+        });
+    </script>
+</body>
